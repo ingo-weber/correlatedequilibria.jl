@@ -1,0 +1,58 @@
+name: "Chicken Game"
+
+players:  
+  - "Alice"
+  - "Bob"
+
+states:
+  - "State 1"
+
+actions:
+  State 1:
+    Alice:
+      - "dare"
+      - "chicken"
+    Bob:
+      - "dare"
+      - "chicken"
+
+joint_actions:
+  State 1:
+    1: 
+      - "dare"
+      - "dare"
+    2:
+      - "dare"
+      - "chicken"
+    3:
+      - "chicken"
+      - "dare"
+    4:
+      - "chicken"
+      - "chicken"
+
+payoffs:
+  State 1:
+    1: 
+      - 0.0
+      - 0.0
+    2:
+      - 7.0
+      - 2.0
+    3:
+      - 2.0
+      - 7.0
+    4:
+      - 6.0
+      - 6.0
+
+probabilities:
+  State 1:
+    1: 
+      State 1: 0.0
+    2:
+      State 1: 0.0
+    3:
+      State 1: 0.0
+    4:
+      State 1: 0.0

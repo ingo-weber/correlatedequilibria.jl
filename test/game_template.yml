@@ -1,0 +1,139 @@
+# Name: the name of the game can be any String
+name: "Template Game"
+
+# Players: The name of the players can be any String
+players:  
+  - "Player 1"
+  - "Player 2"
+
+# States: The name of the states can be any String
+states:
+  - "State 1"
+  - "State 2"
+
+ACTIONS: >
+Define individual actions of each player in each state
+- the name of the actions can be any String
+- if there is no action, please specify as well (e.g. "none")
+- (use the same keys for states & players as defined above)
+
+actions:
+  State 1:
+    Player 1:
+      - "throw"
+      - "none"
+    Player 2:
+      - "catch"
+      - "none"
+  State 2:
+    Player 1:
+      - "throw"
+      - "catch"
+      - "none"
+    Player 2:
+      - "throw"
+      - "none"
+
+JOINT ACTIONS: >
+Define all possible joint actions in each state
+- these must be numbered consecutively (start at 1)
+- please also be aware that the number of the entry corresponds
+  to the number of the player in the same order as defined above
+
+joint_actions:
+  State 1:
+    1: 
+      - "throw" # individual action Player 1
+      - "catch" # individual action Player 2
+    2:
+      - "none"
+      - "none"
+  State 2:
+    1: 
+      - "throw"
+      - "throw"
+    2:
+      - "throw"
+      - "none"
+    3:
+      - "catch"
+      - "throw"
+    4:
+      - "catch"
+      - "none"
+    5:
+      - "none"
+      - "throw"
+    6:
+      - "none"
+      - "none"
+
+PAYOFFS: >
+Define all possible payoffs for each state and joint action
+- please define in the same order as the joint actions above
+- please also be aware that the number of the entry corresponds
+  to the number of the player in the same order as defined above
+- you can define any float
+
+payoffs:
+  State 1:
+    1: # joint action 1
+      - 0.0 # individual payoff for player 1
+      - 0.0 # individual payoff for player 2
+    2:
+      - 1.0
+      - -2.0
+  State 2:
+    1: 
+      - 0.0
+      - 0.0
+    2:
+      - 2.0
+      - -1.0
+    3: 
+      - 4.0
+      - 4.0
+    4: 
+      - 2.0
+      - 0.0
+    5:
+      - -1.0
+      - -1.0
+    6: 
+      - 0.0
+      - 0.0 
+
+PROBABILITIES: >
+Define all transition probabilities for each current state, 
+joint action and future state
+- please define in the same order as above
+- please be aware that for each current state and joint action 
+  the numbers must add up to 1.0
+
+probabilities:
+  State 1: # current state
+    1: # joint action
+      State 1: 0.4 # probability for future State 1
+      State 2: 0.6 # probability for future State 2
+    2: 
+      State 1: 0.8
+      State 2: 0.2
+  State 2:
+    1: 
+      State 1: 0.4
+      State 2: 0.6
+    2: 
+      State 1: 0.8
+      State 2: 0.2
+    3: 
+      State 1: 0.2
+      State 2: 0.8
+    4: 
+      State 1: 1.0
+      State 2: 0.0
+    5: 
+      State 1: 0.1
+      State 2: 0.9
+    6: 
+      State 1: 0.7
+      State 2: 0.3

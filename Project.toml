@@ -1,0 +1,22 @@
+name = "CorrelatedEquilibria"
+uuid = "4c96d332-eead-4a6f-9610-a5f13bc24945"
+authors = ["Tobias Heindel", "Jan Tiegges"]
+version = "0.1.0"
+
+[deps]
+CDDLib = "3391f64e-dcde-5f30-b752-e11513730f60"
+JuMP = "4076af6c-e467-56ae-b986-b466b2749572"
+LazySets = "b4f0291d-fe17-52bc-9479-3d1a343d9043"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+Polyhedra = "67491407-f73d-577b-9b50-8179a7c68029"
+YAML = "ddb6d928-2868-570f-bddf-ab3f9cf99eb6"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

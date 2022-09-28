@@ -1,0 +1,94 @@
+name: "Breakup Game"
+
+players:  
+  - "Player 1"
+  - "Player 2"
+
+states:
+  - "State 1"
+  - "State 2"
+  - "End"
+
+actions:
+  State 1:
+    Player 1:
+      - "pass"
+      - "exit"
+    Player 2:
+      - "none"
+  State 2:
+    Player 1:
+      - "none"
+    Player 2:
+      - "pass"
+      - "exit"
+  End:
+    Player 1:
+      - "none"
+    Player 2:
+      - "none"
+
+joint_actions:
+  State 1:
+    1: 
+      - "pass"
+      - "none"
+    2:
+      - "exit"
+      - "none"
+  State 2:
+    1: 
+      - "none"
+      - "pass"
+    2:
+      - "none"
+      - "exit"
+  End:
+    1: 
+      - "none"
+      - "none"  
+
+payoffs:
+  State 1:
+    1: 
+      - 0.0
+      - 0.0
+    2:
+      - 1.0
+      - -2.0
+  State 2:
+    1: 
+      - 0.0
+      - 0.0
+    2:
+      - 2.0
+      - -1.0
+  End:
+    1: 
+      - 0.0
+      - 0.0 
+
+probabilities:
+  State 1:
+    1: 
+      State 1: 0.0
+      State 2: 1.0
+      End: 0.0
+    2: 
+      State 1: 0.0
+      State 2: 0.0
+      End: 1.0
+  State 2:
+    1: 
+      State 1: 1.0
+      State 2: 0.0
+      End: 0.0
+    2: 
+      State 1: 0.0
+      State 2: 0.0
+      End: 1.0
+  End:
+    1:
+      State 1: 0.0
+      State 2: 0.0
+      End: 1.0
